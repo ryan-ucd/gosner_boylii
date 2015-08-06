@@ -25,22 +25,26 @@ shinyUI(fluidPage(
       ), h3, NULL),
     
     titlePanel(HTML("Gosner Stages of <i> Rana boylii </i>")),
-    
+    br(),
     fluidRow(
-      column(4,
-             helpText("Select a Gosner Stage to view corresponding photo of Foothill yellow-legged frog (Rana boylii) eggs or larvae."),
-#              sliderInput(inputId = "gosner",width = 800,ticks = TRUE,
-#                          label = "Select a Gosner Stage",
-#                          min = 1, max=44,step = 1,value = 1),
-             numericInput("gosner",label =  "Select a Gosner Stage", 
-                          value=10,step=1, min = 1, max = 100),
-             span(em("From Gosner 1960. Herpetologica, Vol. 16, No. 3 (Sep. 23, 1960), pp. 183-190."), style = "color:blue")),
-      
-      column(4, 
-             imageOutput("image1", width="auto")
+      column(3,
+             helpText(HTML("Select or type a Gosner Stage to view a corresponding photo of Foothill yellow-legged frog (<i>R. boylii</i>) development. Not all stages currently have photos. 
+                           See Github for code: (<a>https://github.com/ryan-ucd/gosner_boylii</a>)")),
+
+             numericInput("gosner",label =  "Select a Gosner Stage",
+                          value=1,step=1, min = 1, max = 46),
+
+             helpText(em("From Gosner 1960. Herpetologica, Vol. 16, No. 3 (Sep. 23, 1960), pp. 183-190."), style = "color:blue")
       ),
-      column(8,
-             imageOutput("image2", width = 400, height = 200)
-             )
+      column(8, offset=1,
+             imageOutput("image2", width = "auto")
       )
+    ),
+
+    fluidRow(
+      column(3,
+             imageOutput("image1", width="auto")
+      )
+    )
+
 ))
