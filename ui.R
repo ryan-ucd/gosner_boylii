@@ -28,7 +28,7 @@ shinyUI(fluidPage(
     br(),
     fluidRow(
       column(3,
-             helpText(HTML("Select or type a Gosner Stage to view a corresponding photo of Foothill yellow-legged frog (<i>R. boylii</i>) development. Not all stages currently have photos. 
+             helpText(HTML("Select or type a Gosner Stage (<b>1-46</b>) to view a corresponding photo of Foothill yellow-legged frog (<i>R. boylii</i>) development. Not all stages currently have photos. 
                            See Github for code: (<a>https://github.com/ryan-ucd/gosner_boylii</a>)")),
 
              numericInput("gosner",label =  "Select a Gosner Stage",
